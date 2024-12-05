@@ -25,15 +25,15 @@
         function getMapSheet() {
             const sh = document.getElementById('shirota').value;
             const dg = document.grtElementById('dolgota,).value;
-            const [shg, shm, shs] = sh.split(',').map(coord => parseFloat(coord.trim()));
-            const [dgg, dgm, dgs] = dg.split(',').map(coord => parseFloat(coord.trim()));
+            const [shg, shm, shs] = sh.split(' ').map(coord => parseFloat(coord.trim()));
+            const [dgg, dgm, dgs] = dg.split(' ').map(coord => parseFloat(coord.trim()));
 
             // Простая логика для генерации номенклатуры
             const shirota = shg * 3600 + shm * 60 + shs;
             const dolgata = dgg * 3600 + dhm * 60 + dgs;
             const ub = Math.floor(shirota / 14400) + 1;
             const ryad = Math.floor(dolgota / 21600) +31;
-            const bukva = String.fromCodePoint(64 + ub);
+            const bukva = String.fromCodePoint('64 + ub');
             
             const result = `Номенклатура: ${bukva}-${ryad}`;
 
