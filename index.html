@@ -26,8 +26,8 @@
 
             const sh = document.getElementById('shirota').value;
             const dg = document.getElementById('dolgota').value;
-            const [shg, shm, shs] = sh.split(',').map(Number);
-            const [dgg, dgm, dgs] = dg.split(',').map(Number);
+            const [shg, shm, shs] = sh.split(',').map(parseFloat);
+            const [dgg, dgm, dgs] = dg.split(',').map(parseFloat);
 
             // Простая логика для генерации номенклатуры
             const shirota = (shg * 3600 + shm * 60 + shs);
