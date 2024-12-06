@@ -23,6 +23,7 @@
     </div>
     <script>
         function getMapSheet() {
+            const result = String.fromCodePoint(65);
             const sh = document.getElementById('shirota').value;
             const dg = document.getElementById('dolgota').value;
             const [shg, shm, shs] = sh.split(',').map(coord => parseFloat(coord.trim()));
@@ -35,7 +36,7 @@
             const ryad = Math.floor(dolgota / 21600) + 31;
             const bukva = String.fromCodePoint(64 + ub);
             
-            const result = String.fromCodePoint(65);
+            
 
             document.getElementById('result').innerText = result;
         }
