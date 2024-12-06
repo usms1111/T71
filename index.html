@@ -24,6 +24,7 @@
     <script>
         function getMapSheet() {
             const result = String.fromCodePoint(65);
+            document.getElementById('result').innerText = result;
             const sh = document.getElementById('shirota').value;
             const dg = document.getElementById('dolgota').value;
             const [shg, shm, shs] = sh.split(',').map(coord => parseFloat(coord.trim()));
@@ -38,7 +39,7 @@
             
             
 
-            document.getElementById('result').innerText = result;
+            
         }
     </script>
 </body>
