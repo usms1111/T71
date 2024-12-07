@@ -48,32 +48,32 @@
             if (ub >= 16 && ub < 20) {
                 if (ryad % 2 == 1) {
                     const ryad1 = ryad + 1;
-                    results.push(`${bukva}-${ryad}, ${bukva}-${ryad1}`); // Добавляем результаты в массив
+                    results.push(`${bukva}-${ryad},${ryad1}`); // Добавляем результаты в массив
                 } else {
                     const ryad1 = ryad - 1;
-                    results.push(`${bukva}-${ryad1}, ${bukva}-${ryad}`); // Добавляем результаты в массив
+                    results.push(`${bukva}-${ryad1},${ryad}`); // Добавляем результаты в массив
                 }
             } else if (ub >= 20 && ub <= 22) {
                 if (ryad % 4 == 1) {
                     const ryad1 = ryad + 1;
                     const ryad2 = ryad + 2;
                     const ryad3 = ryad + 3;
-                    results.push(`${bukva}-${ryad}, ${bukva}-${ryad1}, ${bukva}-${ryad2}, ${bukva}-${ryad3}`);
+                    results.push(`${bukva}-${ryad},${ryad1},${ryad2},${ryad3}`);
                 } else if (ryad % 4 == 2) {
                     const ryad1 = ryad - 1;
                     const ryad2 = ryad + 1;
                     const ryad3 = ryad + 2;
-                    results.push(`${bukva}-${ryad1}, ${bukva}-${ryad}, ${bukva}-${ryad2}, ${bukva}-${ryad3}`);
+                    results.push(`${bukva}-${ryad1},${ryad},${ryad2},${ryad3}`);
                 } else if (ryad % 4 == 3) {
                     const ryad1 = ryad - 2;
                     const ryad2 = ryad - 1;
                     const ryad3 = ryad + 1;
-                    results.push(`${bukva}-${ryad1}, ${bukva}-${ryad2}, ${bukva}-${ryad}, ${bukva}-${ryad3}`);
+                    results.push(`${bukva}-${ryad1},${ryad2},${ryad},${ryad3}`);
                 } else if (ryad % 4 == 0) {
                     const ryad1 = ryad - 3;
                     const ryad2 = ryad - 2;
                     const ryad3 = ryad - 1;
-                    results.push(`${bukva}-${ryad1}, ${bukva}-${ryad2}, ${bukva}-${ryad3}, ${bukva}-${ryad}`);
+                    results.push(`${bukva}-${ryad1},${ryad2},${ryad3},${ryad}`);
                 }
             }
         
