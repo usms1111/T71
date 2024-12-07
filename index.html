@@ -8,9 +8,48 @@
         body { font-family: Arial, sans-serif; margin: 20px; background-color: #f4f4f4; }
         .container { max-width: 500px; margin: auto; background: white; padding: 20px; border-radius: 5px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
         input, button { padding: 10px; margin-top: 10px; width: calc(100% - 22px); box-sizing: border-box; }
-        button { background-color: #28a745; color: white; border: none; cursor: pointer; }
-        button:hover { background-color: #218838; }
         #result { margin-top: 20px; font-weight: bold; background-color: #3FE0D0;}
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropbtn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content button {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            border: none;
+            background: none;
+            width: 100%;
+            text-align: left;
+        }
+
+        .dropdown-content button:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -18,13 +57,15 @@
         <h1>Определение номенклатуры топографической карты</h1>
         <input type="text" id="shirota" placeholder="Введите широту (Г, М, С)">
         <input type="text" id="dolgota" placeholder="Введите долготу (Г, М, С)">
-        <label for="options">Выберите опцию:</label>
-        <select id="options">
-            <button onclick="getMapSheet()">1 миллионая</button>
-            <button >Опция 2</button>
-            <button >Опция 3</button>
-        </select>
-        // <button onclick="getMapSheet()">Определить номенклатуру</button>
+        <div class="dropdown">
+            <button class="dropbtn">Выберите опцию</button>
+            <div class="dropdown-content">
+                <button onclick="getMapSheet()">Опция 1</button>
+                <button onclick="alert('Вы выбрали Опцию 2')">Опция 2</button>
+                <button onclick="alert('Вы выбрали Опцию 3')">Опция 3</button>
+            </div>
+        </div>
+        <button onclick="getMapSheet()">Определить номенклатуру</button>
         <div id="result"></div>
     </div>
     <script>
