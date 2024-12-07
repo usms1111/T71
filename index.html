@@ -43,24 +43,24 @@
             }
             if (ub >= 16 and ub < 20){
                 if (ryad % 2 == 1){
-                    var ryad = str(ryad,`,`,ryad + 1);
+                    var ryad = str(ryad,',',ryad + 1);
                 }
                 else if (ryad % 2 == 0){
-                    var ryad = str(ryad - 1,`,`,ryad);;
+                    var ryad = str(ryad - 1,',',ryad);;
                 }
             }
             else if (ub >= 20 and ub <= 22){
                 if (ryad % 4 == 1){
-                    var ryad = str(ryad,`,`,ryad + 1,`,`,ryad + 2,`,`,ryad + 3);
+                    var ryad = str(ryad,',',ryad + 1,',',ryad + 2,',',ryad + 3);
                 }
                 else if (ryad % 4 == 2){
-                    var ryad = str(ryad - 1,`,`,ryad,`,`,ryad + 1,`,`,ryad + 2);
+                    var ryad = str(ryad - 1,',',ryad,',',ryad + 1,',',ryad + 2);
                 }
                 else if (ryad % 4 == 3){
-                    var ryad = str(ryad - 2,`,`,ryad - 1,`,`,ryad,`,`,ryad + 1);
+                    var ryad = str(ryad - 2,',',ryad - 1,',',ryad,',',ryad + 1);
                 }
                 else if (ryad % 4 == 0){
-                    var ryad = str(ryad - 3,`,`,ryad - 2,`,`,ryad - 1,`,`,ryad);
+                    var ryad = str(ryad - 3,',',ryad - 2,',',ryad - 1,',',ryad);
                 }
             }
 
