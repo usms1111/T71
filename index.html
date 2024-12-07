@@ -36,10 +36,10 @@
             var ryad = Math.floor(dolgota / 21600);
             const bukva = String.fromCodePoint(64 + ub);
             if (ryad <= 30){
-                var ryad = ryad + 30
+                var ryad = (ryad + 30);
             }
             else if (ryad > 30){
-                var ryad = ryad - 30
+                var ryad = (ryad - 30);
             }
             
             const result = `${bukva}-${ryad}`;
