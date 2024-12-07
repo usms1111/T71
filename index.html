@@ -45,10 +45,15 @@
                 if (ryad % 2 == 1){
                     const ryad1 = ryad + 1;
                     const result = `${bukva}-${ryad},${ryad1}`;
+                    const result = `${bukva}-${ryad}`;
+                    document.getElementById('result').innerText = result;
+
                 }
                 else if (ryad % 2 == 0){
                     const ryad1 = ryad - 1;
                     const result = `${bukva}-${ryad1},${ryad}`;
+                    const result = `${bukva}-${ryad}`;
+                    document.getElementById('result').innerText = result;                    
                 }
             }
             else if (ub >= 20 && ub <= 22){
@@ -57,31 +62,34 @@
                     const ryad2 = ryad + 2;
                     const ryad3 = ryad + 3;
                     const result = `${bukva}-${ryad},${ryad1},${ryad2},${ryad3}`;
+                    const result = `${bukva}-${ryad}`;
+                    document.getElementById('result').innerText = result;
                 }
                 else if (ryad % 4 == 2){
                     const ryad1 = ryad - 1;
                     const ryad2 = ryad + 1;
                     const ryad3 = ryad + 2;
                     const result = `${bukva}-${ryad1},${ryad},${ryad2},${ryad3}`;
+                    const result = `${bukva}-${ryad}`;
+                    document.getElementById('result').innerText = result;
                 }
                 else if (ryad % 4 == 3){
                     const ryad1 = ryad - 2;
                     const ryad2 = ryad - 1;
                     const ryad3 = ryad + 1;
                     const result = `${bukva}-${ryad1},${ryad2},${ryad},${ryad3}`;
+                    const result = `${bukva}-${ryad}`;
+                    document.getElementById('result').innerText = result;
                 }
                 else if (ryad % 4 == 0){
                     const ryad1 = ryad - 3;
                     const ryad2 = ryad - 2;
                     const ryad3 = ryad - 1;
                     const result = `${bukva}-${ryad1},${ryad2},${ryad3},${ryad}`;
+                    const result = `${bukva}-${ryad}`;
+                    document.getElementById('result').innerText = result;
                 }
             }
-
-            const result = `${bukva}-${ryad}`;
-            document.getElementById('result').innerText = result;
-
-            
         }
     </script>
 </body>
