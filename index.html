@@ -23,74 +23,67 @@
     </div>
     <script>
         function getMapSheet() {
-
             const sh = document.getElementById('shirota').value;
             const dg = document.getElementById('dolgota').value;
             const [shg, shm, shs] = sh.split(',').map(parseFloat);
             const [dgg, dgm, dgs] = dg.split(',').map(parseFloat);
-
+        
             // Простая логика для генерации номенклатуры
             const shirota = (shg * 3600 + shm * 60 + shs);
             const dolgota = (dgg * 3600 + dgm * 60 + dgs);
             const ub = (Math.floor(shirota / 14400) + 1);
-            var ryad = (Math.floor(dolgota / 21600) + 1);
+            let ryad = (Math.floor(dolgota / 21600) + 1); // Используем let вместо var
+        
             const bukva = String.fromCodePoint(64 + ub);
-            if (ryad <= 30){
-                const ryad = (ryad + 30);
+            
+            // Условие для изменения ryad
+            if (ryad <= 30) {
+                ryad += 30; // Изменяем ryad без объявления новой переменной
+            } else {
+                ryad -= 30; // Изменяем ryad без объявления новой переменной
             }
-            else if (ryad > 30){
-                const ryad = (ryad - 30);
-            }
-            if (ub >= 16 && ub < 20){
-                if (ryad % 2 == 1){
+        
+            let results = []; // Массив для хранения результатов
+        
+            if (ub >= 16 && ub < 20) {
+                if (ryad % 2 === 1) {
                     const ryad1 = ryad + 1;
-                    const result = `${bukva}-${ryad},${ryad1}`;
-                    const result = `${bukva}-${ryad}`;
-                    document.getElementById('result').innerText = result;
-
-                }
-                else if (ryad % 2 == 0){
+                    results.push(${bukva}-${ryad}, ${bukva}-${ryad1}); // Добавляем результаты в массив
+                } else {
                     const ryad1 = ryad - 1;
-                    const result = `${bukva}-${ryad1},${ryad}`;
-                    const result = `${bukva}-${ryad}`;
-                    document.getElementById('result').innerText = result;                    
+                    results.push(${bukva}-${ryad1}, ${bukva}-${ryad}); // Добавляем результаты в массив
                 }
-            }
-            else if (ub >= 20 && ub <= 22){
-                if (ryad % 4 == 1){
+            } else if (ub >= 20 && ub <= 22) {
+                if (ryad % 4 === 1) {
                     const ryad1 = ryad + 1;
                     const ryad2 = ryad + 2;
                     const ryad3 = ryad + 3;
-                    const result = `${bukva}-${ryad},${ryad1},${ryad2},${ryad3}`;
-                    const result = `${bukva}-${ryad}`;
-                    document.getElementById('result').innerText = result;
-                }
-                else if (ryad % 4 == 2){
+                    results.push(${bukva}-${ryad}, ${bukva}-${ryad1}, ${bukva}-${ryad2}, ${bukva}-${ryad3});
+                } else if (ryad % 4 === 2) {
                     const ryad1 = ryad - 1;
                     const ryad2 = ryad + 1;
                     const ryad3 = ryad + 2;
-                    const result = `${bukva}-${ryad1},${ryad},${ryad2},${ryad3}`;
-                    const result = `${bukva}-${ryad}`;
-                    document.getElementById('result').innerText = result;
-                }
-                else if (ryad % 4 == 3){
+                    results.push(${bukva}-${ryad1}, ${bukva}-${ryad}, ${bukva}-${ryad2}, ${bukva}-${ryad3});
+                } else if (ryad % 4 === 3) {
                     const ryad1 = ryad - 2;
                     const ryad2 = ryad - 1;
                     const ryad3 = ryad + 1;
-                    const result = `${bukva}-${ryad1},${ryad2},${ryad},${ryad3}`;
-                    const result = `${bukva}-${ryad}`;
-                    document.getElementById('result').innerText = result;
-                }
-                else if (ryad % 4 == 0){
+                    results.push(${bukva}-${ryad1}, ${bukva}-${ryad2}, ${bukva}-${ryad}, ${bukva}-${ryad3});
+                } else if (ryad % 4 === 0) {
                     const ryad1 = ryad - 3;
                     const ryad2 = ryad - 2;
                     const ryad3 = ryad - 1;
-                    const result = `${bukva}-${ryad1},${ryad2},${ryad3},${ryad}`;
-                    const result = `${bukva}-${ryad}`;
-                    document.getElementById('result').innerText = result;
+                    results.push(${bukva}-${ryad1}, ${bukva}-${ryad2}, ${bukva}-${ryad3}, ${bukva}-${ryad});
                 }
             }
-        }
+        
+            // Если массив результатов пуст, добавляем стандартный результат
+            if (results.length === 0) {
+                results.push(${bukva}-${ryad});
+            }
+        
+            document.getElementById('result').innerText = results.join(', '); // Выводим результаты в элемент
+    }
     </script>
 </body>
 </html>
