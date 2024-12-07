@@ -36,7 +36,7 @@
             const ryad = (Math.floor(dolgota / 21600) + 31);
             const bukva = String.fromCodePoint(64 + ub);
             
-            const result = str(${bukva}, `-`, ${ryad});
+            const result = `${bukva}-${ryad}`;
             document.getElementById('result').innerText = result;
 
             
