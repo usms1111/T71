@@ -43,28 +43,42 @@
             }
             if (ub >= 16 and ub < 20){
                 if (ryad % 2 == 1){
-                    var ryad = str(ryad,',',ryad + 1);
+                    var ryad1 = ryad + 1;
+                    const result = `${bukva}-${ryad},${ryad1}`;
                 }
                 else if (ryad % 2 == 0){
-                    var ryad = str(ryad - 1,',',ryad);;
+                    var ryad1 = ryad - 1;
+                    const result = `${bukva}-${ryad1},${ryad}`;
                 }
             }
             else if (ub >= 20 and ub <= 22){
                 if (ryad % 4 == 1){
-                    var ryad = str(ryad,',',ryad + 1,',',ryad + 2,',',ryad + 3);
+                    var ryad1 = ryad + 1;
+                    var ryad2 = ryad + 2;
+                    var ryad3 = ryad + 3;
+                    const result = `${bukva}-${ryad},${ryad1},${ryad2},${ryad3}`;
                 }
                 else if (ryad % 4 == 2){
-                    var ryad = str(ryad - 1,',',ryad,',',ryad + 1,',',ryad + 2);
+                    var ryad1 = ryad - 1;
+                    var ryad2 = ryad + 1;
+                    var ryad3 = ryad + 2;
+                    const result = `${bukva}-${ryad1},${ryad},${ryad2},${ryad3}`;
                 }
                 else if (ryad % 4 == 3){
-                    var ryad = str(ryad - 2,',',ryad - 1,',',ryad,',',ryad + 1);
+                    var ryad1 = ryad - 2;
+                    var ryad2 = ryad - 1;
+                    var ryad3 = ryad + 1;
+                    const result = `${bukva}-${ryad1},${ryad2},${ryad},${ryad3}`;
                 }
                 else if (ryad % 4 == 0){
-                    var ryad = str(ryad - 3,',',ryad - 2,',',ryad - 1,',',ryad);
+                    var ryad1 = ryad - 3;
+                    var ryad2 = ryad - 2;
+                    var ryad3 = ryad - 1;
+                    const result = `${bukva}-${ryad1},${ryad2},${ryad3},${ryad}`;
                 }
             }
 
-            const result = `${bukva}-` + ryad;
+            const result = `${bukva}-${ryad}`;
             document.getElementById('result').innerText = result;
 
             
