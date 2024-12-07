@@ -10,7 +10,7 @@
         input, button { padding: 10px; margin-top: 10px; width: calc(100% - 22px); box-sizing: border-box; }
         #result { margin-top: 20px; font-weight: bold; background-color: #3FE0D0;}
         .dropdown {
-            position: relative;
+            position: left;
             display: inline-block;
         }
 
@@ -58,18 +58,17 @@
         <input type="text" id="shirota" placeholder="Введите широту (Г, М, С)">
         <input type="text" id="dolgota" placeholder="Введите долготу (Г, М, С)">
         <div class="dropdown">
-            <button class="dropbtn">Выберите опцию</button>
+            <button class="dropbtn">Масштаб</button>
             <div class="dropdown-content">
-                <button onclick="getMapSheet()">Опция 1</button>
+                <button onclick="Million()">1 миллиная</button>
                 <button onclick="alert('Вы выбрали Опцию 2')">Опция 2</button>
                 <button onclick="alert('Вы выбрали Опцию 3')">Опция 3</button>
             </div>
         </div>
-        <button onclick="getMapSheet()">Определить номенклатуру</button>
         <div id="result"></div>
     </div>
     <script>
-        function getMapSheet() {
+        function Million() {
             const sh = document.getElementById('shirota').value;
             const dg = document.getElementById('dolgota').value;
             const [shg, shm, shs] = sh.split(',').map(parseFloat);
