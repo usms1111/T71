@@ -18,7 +18,13 @@
         <h1>Определение номенклатуры топографической карты</h1>
         <input type="text" id="shirota" placeholder="Введите широту (Г, М, С)">
         <input type="text" id="dolgota" placeholder="Введите долготу (Г, М, С)">
-        <button onclick="getMapSheet()">Определить номенклатуру</button>
+        <label for="options">Выберите опцию:</label>
+        <select id="options">
+            <button onclick="getMapSheet()">1 миллионая</button>
+            <button >Опция 2</button>
+            <button >Опция 3</button>
+        </select>
+        // <button onclick="getMapSheet()">Определить номенклатуру</button>
         <div id="result"></div>
     </div>
     <script>
