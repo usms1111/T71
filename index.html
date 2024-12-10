@@ -129,7 +129,7 @@
             }
         
             document.getElementById('result').innerText = results.join(', '); // Выводим результаты в элемент
-    }
+        }
         function Pyatitis() {
             const sh = document.getElementById('shirota').value;
             const dg = document.getElementById('dolgota').value;
@@ -169,13 +169,15 @@
             // Условие для изменения ryad
             if (ryad <= 30) {
                 ryad += 30; // Изменяем ryad без объявления новой переменной
-            } else {
+            }
+            else {
                 ryad -= 30; // Изменяем ryad без объявления новой переменной
-                
+            }
+            
             const result = `${bukva}-${ryad}-${bPytitis}`
             document.getElementById('result').innerText = result
             
-            }
+        }
     </script>
 </body>
 </html>
