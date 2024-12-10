@@ -144,16 +144,38 @@
         
             const bukva = String.fromCodePoint(64 + ub);
 
-            const pyat_B = (shirota / 14400) - Math.floor(shirota / 14400)
-            const pyat_L = (dolgota / 21600) - Math.floor(dolgota / 21600)
+            const pyat_B = (shirota / 14400) - Math.floor(shirota / 14400);
+            const pyat_L = (dolgota / 21600) - Math.floor(dolgota / 21600);
+
+            const bB = (Math.floor(pyat_B / 7200) + 1);
+            const rL = (Math.floor(pyat_L / 10800) + 1);
+
+            if (bB == 2) && (rL == 1){
+                const bPytitis = 'А';
+            }
+            
+            else if (bB == 2) && (rL == 2){
+                const bPytitis = 'Б';
+            }
+            
+            else if (bB == 1) && (rL == 1){
+                const bPytitis = 'В';
+            }
+            
+            else if (bB == 1) && (rL == 2){
+                const bPytitis = 'Г';
+            }
             
             // Условие для изменения ryad
             if (ryad <= 30) {
                 ryad += 30; // Изменяем ryad без объявления новой переменной
             } else {
                 ryad -= 30; // Изменяем ryad без объявления новой переменной
-            }
+                
+            const result = `${bukva}-${ryad}-${bPytitis}`
+            document.getElementById('result').innerText = result
             
+            }
     </script>
 </body>
 </html>
