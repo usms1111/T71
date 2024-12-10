@@ -99,7 +99,7 @@
                     const ryad1 = ryad - 1;
                     results.push(`${bukva}-${ryad1},${ryad}`); // Добавляем результаты в массив
                 }
-            } else if (ub >= 20 && ub <= 22) {
+            } else if (ub >= 20 && ub <= 21) {
                 if (ryad % 4 == 1) {
                     const ryad1 = ryad + 1;
                     const ryad2 = ryad + 2;
@@ -121,6 +121,8 @@
                     const ryad3 = ryad - 1;
                     results.push(`${bukva}-${ryad1},${ryad2},${ryad3},${ryad}`);
                 }
+            } else if (ub == 22){
+                results.push(`${bukva}`)
             }
         
             // Если массив результатов пуст, добавляем стандартный результат
@@ -180,8 +182,29 @@
             else {
                 ryad -= 30; // Изменяем ryad без объявления новой переменной
             }
-            
-            results.push(`${bukva}-${ryad}-${bPytitis}`);
+
+            if (ub >= 16 && ub < 22) {
+                if (bB <= 1) {
+                    if (rL <= 1){
+                        const bPytitis1 = String.fromCodePoint(0413);
+                        results.push(`${bukva}-${ryad}-${bPytitis},${bPytitis1}`); // Добавляем результаты в массив
+                    } else if (rL > 1 && rL <= 2){
+                        const bPytitis1 = String.fromCodePoint(0412);
+                        results.push(`${bukva}-${ryad}-${bPytitis1},${bPytitis}`); // Добавляем результаты в массив
+                    }
+                } else {
+                    if (rL <= 1){
+                        const bPytitis1 = String.fromCodePoint(0411);
+                        results.push(`${bukva}-${ryad}-${bPytitis},${bPytitis1}`); // Добавляем результаты в массив
+                    } else if (rL > 1 && rL <= 2){
+                        const bPytitis1 = String.fromCodePoint(0410);
+                        results.push(`${bukva}-${ryad}-${bPytitis1},${bPytitis}`); // Добавляем результаты в массив
+                    }
+                }
+            }
+            if (results.length == 0) {
+                results.push(`${bukva}-${ryad}-${bPytitis}`);
+            }
             document.getElementById('result').innerText = results.join(', ');
             
         }
