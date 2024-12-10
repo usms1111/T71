@@ -160,19 +160,19 @@
             let results = []; // Массив для хранения результатов
             
             if (bB <= 2 && bB > 1 && rL <= 1){
-                bPytitis = String.fromCodePoint(&#x410);
+                bPytitis = String.fromCodePoint(1040);
             }
             
             else if (bB <= 2 && rL <= 2 && bB > 1 && rL > 1){
-                bPytitis = String.fromCodePoint(0411);
+                bPytitis = String.fromCodePoint(1041);
             }
             
             else if (bB <= 1 && rL <= 1){
-                bPytitis = String.fromCodePoint(0412);
+                bPytitis = String.fromCodePoint(1042);
             }
             
             else if (bB <= 1 && rL <= 2 && rL > 1){
-                bPytitis = String.fromCodePoint(0413);
+                bPytitis = String.fromCodePoint(1043);
             }
             
             // Условие для изменения ryad
@@ -186,18 +186,18 @@
             if (ub >= 16 && ub < 22) {
                 if (bB <= 1) {
                     if (rL <= 1){
-                        const bPytitis1 = String.fromCodePoint(0413);
+                        const bPytitis1 = String.fromCodePoint(1043);
                         results.push(`${bukva}-${ryad}-${bPytitis},${bPytitis1}`); // Добавляем результаты в массив
                     } else if (rL > 1 && rL <= 2){
-                        const bPytitis1 = String.fromCodePoint(0412);
+                        const bPytitis1 = String.fromCodePoint(1042);
                         results.push(`${bukva}-${ryad}-${bPytitis1},${bPytitis}`); // Добавляем результаты в массив
                     }
                 } else if (bB > 1 && bB <= 2){
                     if (rL <= 1){
-                        const bPytitis1 = String.fromCodePoint(0411);
+                        const bPytitis1 = String.fromCodePoint(1041);
                         results.push(`${bukva}-${ryad}-${bPytitis},${bPytitis1}`); // Добавляем результаты в массив
                     } else if (rL > 1 && rL <= 2){
-                        const bPytitis1 = String.fromCodePoint(0410);
+                        const bPytitis1 = String.fromCodePoint(1040);
                         results.push(`${bukva}-${ryad}-${bPytitis1},${bPytitis}`); // Добавляем результаты в массив
                     }
                 }
