@@ -60,9 +60,9 @@
         <div class="dropdown">
             <button class="dropbtn">Масштаб</button>
             <div class="dropdown-content">
-                <button onclick="Million()">1 миллиная</button>
-                <button onclick="Pyatitis()">1 пятистатысячная</button>
-                <button onclick="alert('Вы выбрали Опцию 3')">Опция 3</button>
+                <button onclick="Million()">1:1 000 000</button>
+                <button onclick="Pyatitis()">1:500 000</button>
+                <button onclick="Dvuhsotis()">1:200 000</button>
             </div>
         </div>
         <div id="result"></div>
@@ -242,12 +242,12 @@
                 if (J % 2 == 1) {
                     results.push(`${bukva}-${ryad}-${matrix1[I][J]},${matrix1[I][J + 1]}`); // Добавляем результаты в массив
                 } else {
-                    results.push(`${bukva}-${ryad1}-${matrix1[I][J - 1]},${matrix1[I][J]}`);; // Добавляем результаты в массив
+                    results.push(`${bukva}-${ryad1}-${matrix1[I][J - 1]},${matrix1[I][J]}`); // Добавляем результаты в массив
                 }
             }
             
             if (results.length == 0) {
-                results.push(`${bukva}-${ryad}-${matrix1[I][J]`);
+                results.push(`${bukva}-${ryad1}-${matrix1[I][J]}`);
             }
             
             document.getElementById('result').innerText = results.join(', ');
