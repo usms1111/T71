@@ -130,6 +130,9 @@
         
             document.getElementById('result').innerText = results.join(', '); // Выводим результаты в элемент
         }
+
+
+        
         function Pyatitis() {
             const sh = document.getElementById('shirota').value;
             const dg = document.getElementById('dolgota').value;
@@ -151,6 +154,8 @@
             const rL = (Math.floor(pyat_L / 10800) + 1);
 
             let bPytitis;
+
+            let results = []; // Массив для хранения результатов
             
             if (bB == 2 && rL == 1){
                 const bPytitis = 'А';
@@ -176,8 +181,8 @@
                 ryad -= 30; // Изменяем ryad без объявления новой переменной
             }
             
-            const result = `${bukva}-${ryad}-${bPytitis}`
-            document.getElementById('result').innerText = result
+            results.push(`${bukva}-${ryad}-${bPytitis}`);
+            document.getElementById('result').innerText = results.join(', ');
             
         }
     </script>
