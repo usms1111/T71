@@ -158,19 +158,19 @@
             let results = []; // Массив для хранения результатов
             
             if (bB <= 2 && bB > 1 && rL <= 1){
-                bPytitis = "А";
+                bPytitis = String.fromCodePoint(0410);
             }
             
             else if (bB <= 2 && rL <= 2 && bB > 1 && rL > 1){
-                bPytitis = "Б";
+                bPytitis = String.fromCodePoint(0411);
             }
             
             else if (bB <= 1 && rL <= 1){
-                bPytitis = "В";
+                bPytitis = String.fromCodePoint(0412);
             }
             
             else if (bB <= 1 && rL <= 2 && rL > 1){
-                bPytitis = "Г";
+                bPytitis = String.fromCodePoint(0413);
             }
             
             // Условие для изменения ryad
