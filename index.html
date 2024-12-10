@@ -208,6 +208,51 @@
             document.getElementById('result').innerText = results.join(', ');
             
         }
+        function Dvuhsotis() {
+            const sh = document.getElementById('shirota').value;
+            const dg = document.getElementById('dolgota').value;
+            const [shg, shm, shs] = sh.split(',').map(parseFloat);
+            const [dgg, dgm, dgs] = dg.split(',').map(parseFloat);
+        
+            // Простая логика для генерации номенклатуры
+            const shirota = (shg * 3600 + shm * 60 + shs);
+            const dolgota = (dgg * 3600 + dgm * 60 + dgs);
+            const ub = (Math.floor(shirota / 14400) + 1);
+            let ryad = (Math.floor(dolgota / 21600) + 1); // Используем let вместо var
+        
+            const bukva = String.fromCodePoint(64 + ub);
+
+            const pyat_B = (shirota / 14400) - Math.floor(shirota / 14400);
+            const pyat_L = (dolgota / 21600) - Math.floor(dolgota / 21600);
+
+            const I = Math.floor(pyat_B / 240)+1;
+            const J = Math.floor(pyat_L / 360)+1;
+
+            let matrix1 = [['I', 'II', 'III', 'IV', 'V', 'VI'], ['VII', 'VIII', 'IX', 'X', 'XI', 'XII'], ['XIII', 'XIV', 'XV', 'XVI', 'XVII', 'XVIII'], ['XIX', 'XX', 'XXI', 'XXII', 'XXIII', 'XXIV'], ['XXV', 'XXVI', 'XXVII', 'XXVIII', 'XXIX', 'XXX'], ['XXXI', 'XXXII', 'XXXIII', 'XXXIV', 'XXXV', 'XXXVI']];
+            let results = []; // Массив для хранения результатов
+            
+            // Условие для изменения ryad
+            if (ryad <= 30) {
+                ryad += 30; // Изменяем ryad без объявления новой переменной
+            }
+            else {
+                ryad -= 30; // Изменяем ryad без объявления новой переменной
+            }
+            if (ub >= 16 && ub < 22) {
+                if (J % 2 == 1) {
+                    results.push(`${bukva}-${ryad}-${matrix1[I][J]},${matrix1[I][J + 1]}`); // Добавляем результаты в массив
+                } else {
+                    results.push(`${bukva}-${ryad1}-${matrix1[I][J - 1]},${matrix1[I][J]}`);; // Добавляем результаты в массив
+                }
+            }
+            
+            if (results.length == 0) {
+                results.push(`${bukva}-${ryad}-${matrix1[I][J]`);
+            }
+            
+            document.getElementById('result').innerText = results.join(', ');
+            
+        }
     </script>
 </body>
 </html>
