@@ -150,26 +150,26 @@
             const pyat_B = (shirota / 14400) - Math.floor(shirota / 14400);
             const pyat_L = (dolgota / 21600) - Math.floor(dolgota / 21600);
 
-            const bB = (Math.floor(pyat_B / 7200) + 1);
-            const rL = (Math.floor(pyat_L / 10800) + 1);
+            const bB = (pyat_B / 7200);
+            const rL = (pyat_L / 10800);
 
             let bPytitis;
 
             let results = []; // Массив для хранения результатов
             
-            if (bB == 2 && rL == 1){
+            if (bB <= 2 && bB > 1 && rL <= 1){
                 const bPytitis = 'А';
             }
             
-            else if (bB == 2 && rL == 2){
+            else if (bB <= 2 && rL <= 2 && bB > 1 && rL > 1){
                 const bPytitis = 'Б';
             }
             
-            else if (bB == 1 && rL == 1){
+            else if (bB <= 1 && rL <= 1){
                 const bPytitis = 'В';
             }
             
-            else if (bB == 1 && rL == 2){
+            else if (bB <= 1 && rL <= 2 && rL > 1){
                 const bPytitis = 'Г';
             }
             
