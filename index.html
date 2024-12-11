@@ -225,7 +225,7 @@
             const pyat_B = (shirota / 14400) - Math.floor(shirota / 14400);
             const pyat_L = (dolgota / 21600) - Math.floor(dolgota / 21600);
 
-            const i_i = (Math.floor(pyat_B / 240) + 1);
+            const i_i = (Math.floor((14400 - pyat_B) / 240) + 1);
             const j_j = (Math.floor(pyat_L / 360) + 1);
 
             let matrix1 = [['I', 'II', 'III', 'IV', 'V', 'VI'], ['VII', 'VIII', 'IX', 'X', 'XI', 'XII'], ['XIII', 'XIV', 'XV', 'XVI', 'XVII', 'XVIII'], ['XIX', 'XX', 'XXI', 'XXII', 'XXIII', 'XXIV'], ['XXV', 'XXVI', 'XXVII', 'XXVIII', 'XXIX', 'XXX'], ['XXXI', 'XXXII', 'XXXIII', 'XXXIV', 'XXXV', 'XXXVI']];
